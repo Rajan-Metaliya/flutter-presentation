@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 import 'slide_navigation/cubit/navigation_cubit.dart';
 
@@ -15,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NavigationCubit(),
-      child: BlocBuilder<NavigationCubit, GoRouter>(
-        builder: (context, state) {
+      child: Builder(
+        builder: (context) {
           return MaterialApp.router(
             title: 'Flutter App',
             theme: ThemeData(
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-            routerConfig: state,
+            routerConfig: context.read<NavigationCubit>().state.route,
           );
         },
       ),

@@ -8,33 +8,40 @@ class SlideNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomRight,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // create previous button
-          FloatingActionButton(
-            heroTag: 'back',
-            child: const Icon(Icons.arrow_back),
-            onPressed: () {
-              context.read<NavigationCubit>().navigateToPrevious();
-            },
+    return BlocBuilder<NavigationCubit, NavigationState>(
+      builder: (context, state) {
+        if (state is! NavigationInitialState) return const SizedBox();
+        return Align(
+          alignment: Alignment.bottomRight,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (state.canNavigateToPrevious)
+                // create previous button
+                FloatingActionButton(
+                  heroTag: 'back',
+                  child: const Icon(Icons.arrow_back),
+                  onPressed: () {
+                    context.read<NavigationCubit>().navigateToPrevious();
+                  },
+                ),
+              const SizedBox(
+                width: 20,
+              ),
+              // create next button
+              if (state.canNavigateToNext)
+                FloatingActionButton(
+                  heroTag: 'next',
+                  child: const Icon(Icons.arrow_forward),
+                  onPressed: () {
+                    context.read<NavigationCubit>().navigateToNext();
+                  },
+                ),
+            ],
           ),
-          const SizedBox(
-            width: 20,
-          ),
-          // create next button
-          FloatingActionButton(
-            heroTag: 'next',
-            child: const Icon(Icons.arrow_forward),
-            onPressed: () {
-              context.read<NavigationCubit>().navigateToNext();
-            },
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

@@ -1,31 +1,39 @@
 import 'package:bloc/bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:meta/meta.dart';
 
 import '../../app/routes/routes.dart';
 import '../../app/routes/routes_path.dart';
 
-class NavigationCubit extends Cubit<GoRouter> {
-  String currentRoute = '/';
+part 'navigation_state.dart';
 
-  NavigationCubit() : super(router);
+class NavigationCubit extends Cubit<NavigationState> {
+  NavigationCubit() : super(NavigationInitialState(RoutePath.sliderList.first));
 
   void navigateToNext() {
-    final index = RoutePath.sliderList.indexOf(currentRoute);
+    if (state is! NavigationInitialState) return;
+
+    final currentState = state as NavigationInitialState;
+
+    final index = RoutePath.sliderList.indexOf(currentState.currentRoute);
     if (index + 1 < RoutePath.sliderList.length) {
       final nextRoute = RoutePath.sliderList[index + 1];
 
-      currentRoute = nextRoute;
-      state.go(nextRoute);
+      emit(NavigationInitialState(nextRoute));
+      state.route.go(nextRoute);
     }
   }
 
   void navigateToPrevious() {
-    final index = RoutePath.sliderList.indexOf(currentRoute);
+    if (state is! NavigationInitialState) return;
+
+    final currentState = state as NavigationInitialState;
+    final index = RoutePath.sliderList.indexOf(currentState.currentRoute);
     if (index - 1 >= 0) {
       final previousRoute = RoutePath.sliderList[index - 1];
 
-      currentRoute = previousRoute;
-      state.go(previousRoute);
+      emit(NavigationInitialState(previousRoute));
+      state.route.go(previousRoute);
     }
   }
 }
