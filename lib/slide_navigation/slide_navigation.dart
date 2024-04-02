@@ -16,6 +16,7 @@ class SlideNavigation extends StatelessWidget {
         children: [
           // create previous button
           FloatingActionButton(
+            heroTag: 'back',
             child: const Icon(Icons.arrow_back),
             onPressed: () {
               context.read<NavigationCubit>().navigateToPrevious();
@@ -26,6 +27,7 @@ class SlideNavigation extends StatelessWidget {
           ),
           // create next button
           FloatingActionButton(
+            heroTag: 'next',
             child: const Icon(Icons.arrow_forward),
             onPressed: () {
               context.read<NavigationCubit>().navigateToNext();
