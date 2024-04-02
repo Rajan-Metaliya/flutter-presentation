@@ -7,11 +7,16 @@ class IntroSlide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScaffoldWrapper(
-      body: Column(
-        children: [
-          Text('Flutter Introduction'),
-        ],
+    return ScaffoldWrapper(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.white,
+        child: const Column(
+          children: [
+            Text('Flutter Introduction'),
+          ],
+        ),
       ),
     );
   }

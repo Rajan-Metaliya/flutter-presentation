@@ -7,11 +7,16 @@ class ContentSlide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScaffoldWrapper(
-      body: Column(
-        children: [
-          Text('Content Slide'),
-        ],
+    return ScaffoldWrapper(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.red,
+        child: const Column(
+          children: [
+            Text('Content Slide'),
+          ],
+        ),
       ),
     );
   }
