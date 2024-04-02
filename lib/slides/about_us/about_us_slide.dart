@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/theme/extensions/extension.dart';
 import '../../widgets/scaffold_wrapper.dart';
 
 class AboutUsSlide extends StatelessWidget {
@@ -8,11 +9,9 @@ class AboutUsSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWrapper(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.blue,
-        child: const Text('About Us'),
+      body: Text(
+        'About Us',
+        style: Theme.of(context).appTextTheme.title,
       ),
     );
   }

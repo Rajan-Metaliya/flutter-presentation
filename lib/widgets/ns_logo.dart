@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/utils/const/assets_const.dart';
+
+import '../utils/const/assets_const.dart';
 
 class NsLogoWidget extends StatelessWidget {
   const NsLogoWidget({super.key});
@@ -15,25 +16,26 @@ class NsLogoWidget extends StatelessWidget {
         ),
         RichText(
           text: TextSpan(
-            text: "Non",
+            text: 'Non',
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium
                 ?.copyWith(fontWeight: FontWeight.bold, letterSpacing: 1.2),
             children: [
               TextSpan(
-                text: "S",
+                text: 'S',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: const Color(0xff059D66),
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.2),
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                    ),
               ),
               const TextSpan(
-                text: "top",
+                text: 'top',
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

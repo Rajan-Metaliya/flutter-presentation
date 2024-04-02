@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'slide_navigation/cubit/navigation_cubit.dart';
+import 'utils/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,12 +19,8 @@ class MyApp extends StatelessWidget {
         builder: (context) {
           return MaterialApp.router(
             title: 'Flutter App',
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(
-                seedColor: const Color.fromARGB(255, 58, 166, 183),
-              ),
-              useMaterial3: true,
-            ),
+            theme: AppTheme.themeData,
+            darkTheme: AppTheme.darkThemeData,
             routerConfig: context.read<NavigationCubit>().state.route,
           );
         },
