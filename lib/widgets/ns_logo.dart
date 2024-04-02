@@ -25,7 +25,7 @@ class NsLogoWidget extends StatelessWidget {
               TextSpan(
                 text: 'S',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.2,
                     ),

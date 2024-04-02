@@ -79,7 +79,19 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
     covariant ThemeExtension<AppTextTheme>? other,
     double t,
   ) {
-    // TODO: implement lerp
-    throw UnimplementedError();
+    if (other == null) {
+      return this;
+    }
+
+    if (other is AppTextTheme) {
+      return AppTextTheme(
+        title: TextStyle.lerp(title, other.title, t)!,
+        subTitle: TextStyle.lerp(subTitle, other.subTitle, t)!,
+        body: TextStyle.lerp(body, other.body, t)!,
+        caption: TextStyle.lerp(caption, other.caption, t)!,
+      );
+    }
+
+    return this;
   }
 }

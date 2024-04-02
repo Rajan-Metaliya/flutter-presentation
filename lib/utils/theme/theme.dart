@@ -29,7 +29,7 @@ class AppTheme {
       primary: Color(0xff059D66),
       onPrimary: Color(0xffffffff),
       onSecondary: Color(0xffffffff),
-      secondary: Color(0xff059D66),
+      secondary: Color(0xffFFC107),
       error: Color(0xffB00020),
       onError: Color(0xffffffff),
       background: Color(0xff212121),
