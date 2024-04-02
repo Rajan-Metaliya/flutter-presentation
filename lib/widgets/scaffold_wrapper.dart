@@ -20,7 +20,6 @@ class _ScaffoldWrapperState extends State<ScaffoldWrapper> {
     return KeyboardListener(
       focusNode: focusNode,
       onKeyEvent: (event) {
-        print(event.logicalKey);
         if (event.logicalKey == LogicalKeyboardKey.arrowLeft) {
           Navigator.of(context).pop();
         } else if (event.logicalKey == LogicalKeyboardKey.arrowRight) {

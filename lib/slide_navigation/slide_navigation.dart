@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/slides/about_us/about_us_slide.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'cubit/navigation_cubit.dart';
 
 class SlideNavigation extends StatelessWidget {
   const SlideNavigation({super.key});
@@ -16,7 +18,7 @@ class SlideNavigation extends StatelessWidget {
           FloatingActionButton(
             child: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).pop();
+              context.read<NavigationCubit>().navigateToPrevious();
             },
           ),
           const SizedBox(
@@ -26,10 +28,7 @@ class SlideNavigation extends StatelessWidget {
           FloatingActionButton(
             child: const Icon(Icons.arrow_forward),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AboutUsSlide()),
-              );
+              context.read<NavigationCubit>().navigateToNext();
             },
           ),
         ],
