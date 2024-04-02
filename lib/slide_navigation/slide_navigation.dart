@@ -8,12 +8,12 @@ class SlideNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NavigationCubit, NavigationState>(
-      builder: (context, state) {
-        if (state is! NavigationInitialState) return const SizedBox();
-        return Align(
-          alignment: Alignment.bottomRight,
-          child: Row(
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: BlocBuilder<NavigationCubit, NavigationState>(
+        builder: (context, state) {
+          if (state is! NavigationInitialState) return const SizedBox();
+          return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -39,9 +39,9 @@ class SlideNavigation extends StatelessWidget {
                   },
                 ),
             ],
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
