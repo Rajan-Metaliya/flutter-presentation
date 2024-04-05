@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp> {
       routerConfig: context.read<NavigationCubit>().state.route,
       themeAnimationCurve: Curves.easeInCirc,
       themeAnimationDuration: const Duration(milliseconds: 500),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

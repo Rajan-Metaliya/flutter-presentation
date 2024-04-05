@@ -9,13 +9,20 @@ class IntroSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWrapper(
-      body: Column(
-        children: [
-          Text(
-            'Flutter Introduction',
-            style: Theme.of(context).appTextTheme.title,
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Advanced Theming In Flutter:',
+              style: Theme.of(context).appTextTheme.title,
+            ),
+            Text(
+              'Leveraging Extensions for Dynamic UIs',
+              style: Theme.of(context).appTextTheme.subTitle,
+            ),
+          ],
+        ),
       ),
     );
   }
