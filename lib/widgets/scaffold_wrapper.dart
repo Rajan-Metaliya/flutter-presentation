@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../slide_navigation/slide_navigation.dart';
 import '../theme/theme_button.dart';
-import 'ns_logo.dart';
+import 'app_bottom_bar.dart';
 
 class ScaffoldWrapper extends StatefulWidget {
   const ScaffoldWrapper({super.key, required this.body});
@@ -30,21 +30,7 @@ class _ScaffoldWrapperState extends State<ScaffoldWrapper> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 60,
-        width: double.infinity,
-        alignment: Alignment.centerRight,
-        color: Theme.of(context).colorScheme.primary,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Hero(
-          tag: const ObjectKey('nsLogo'),
-          child: Container(
-            color: Theme.of(context).colorScheme.background,
-            padding: const EdgeInsets.only(right: 10),
-            child: const NsLogoWidget(),
-          ),
-        ),
-      ),
+      bottomNavigationBar: const AppBottomBar(),
     );
   }
 }
