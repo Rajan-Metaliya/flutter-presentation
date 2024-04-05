@@ -11,7 +11,7 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
   final TextStyle body;
   final TextStyle caption;
 
-  AppTextTheme({
+  const AppTextTheme({
     this.title = const TextStyle(
       fontSize: 32,
       fontWeight: FontWeight.w900,
@@ -35,25 +35,25 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
   });
 
   factory AppTextTheme.dark() {
-    return AppTextTheme(
-      title: const TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.w900,
-        color: Color(0xffffffff),
-      ),
-      subTitle: const TextStyle(
-        fontSize: 28,
-        fontWeight: FontWeight.w700,
-        color: Color(0xffffffff),
-      ),
-      body: const TextStyle(
+    return const AppTextTheme(
+      title: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w500,
         color: Color(0xffffffff),
       ),
-      caption: const TextStyle(
+      subTitle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: Color(0xffffffff),
+      ),
+      body: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w400,
+        color: Color(0xffffffff),
+      ),
+      caption: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
         color: Color(0xffffffff),
       ),
     );

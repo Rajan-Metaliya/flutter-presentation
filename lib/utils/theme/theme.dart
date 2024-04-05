@@ -18,7 +18,7 @@ class AppTheme {
       brightness: Brightness.light,
     ),
     // Add the extension to the list of extensions
-    extensions: [
+    extensions: const [
       AppTextTheme(),
     ],
     useMaterial3: true,
