@@ -37,22 +37,22 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
   factory AppTextTheme.dark() {
     return const AppTextTheme(
       title: TextStyle(
-        fontSize: 24,
+        fontSize: 32,
         fontWeight: FontWeight.w500,
         color: Color(0xffffffff),
       ),
       subTitle: TextStyle(
-        fontSize: 20,
+        fontSize: 28,
         fontWeight: FontWeight.w400,
         color: Color(0xffffffff),
       ),
       body: TextStyle(
-        fontSize: 16,
+        fontSize: 24,
         fontWeight: FontWeight.w400,
         color: Color(0xffffffff),
       ),
       caption: TextStyle(
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: FontWeight.w400,
         color: Color(0xffffffff),
       ),

@@ -34,6 +34,16 @@ class _MyAppState extends State<MyApp> {
       themeAnimationCurve: Curves.easeInCirc,
       themeAnimationDuration: const Duration(milliseconds: 500),
       debugShowCheckedModeBanner: false,
+      builder: (context, child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+            textScaler: TextScaler.linear(
+              MediaQuery.of(context).size.width / 800,
+            ),
+          ),
+          child: child!,
+        );
+      },
     );
   }
 }
