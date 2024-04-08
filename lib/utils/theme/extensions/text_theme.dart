@@ -18,12 +18,12 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
       color: Color(0xff000000),
     ),
     this.subTitle = const TextStyle(
-      fontSize: 28,
+      fontSize: 24,
       fontWeight: FontWeight.w700,
       color: Color(0xff000000),
     ),
     this.body = const TextStyle(
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: FontWeight.w500,
       color: Color(0xff000000),
     ),
@@ -42,12 +42,12 @@ class AppTextTheme extends ThemeExtension<AppTextTheme> {
         color: Color(0xffffffff),
       ),
       subTitle: TextStyle(
-        fontSize: 28,
+        fontSize: 24,
         fontWeight: FontWeight.w400,
         color: Color(0xffffffff),
       ),
       body: TextStyle(
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: FontWeight.w400,
         color: Color(0xffffffff),
       ),
